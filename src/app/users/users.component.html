@@ -1,0 +1,13 @@
+<p>800A</p>
+<div class="container mt-4">
+  <ul class="list-group">
+    <li [routerLink]="[user.id]" routerLinkActive="active" class="list-group-item" *ngFor="let user of user">
+      {{user.name}}
+    </li>
+  </ul>
+  <hr>
+  <router-outlet></router-outlet>
+<div class="container d-flex justify-content-center">
+  <button type="button" class="btn btn-primary">Toogle</button>
+</div>
+</div>

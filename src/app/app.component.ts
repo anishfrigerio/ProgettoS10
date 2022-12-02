@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'Routing';
   constructor(private postSrv: PostService){}
   ngOnInit(): void {
-    this.postSrv.fetchData()
+    let x = this.postSrv.fetchData()
+    console.log(x)
   }
 }

@@ -1,14 +1,16 @@
 <div class="container text-center">
+  <span class="display-4" appHighlight> Benvenuto</span>
+</div>
+<div class="container text-center d-flex justify-content-center">
+  <a class="btn btn-success my-5" [routerLink]="['/post/attivi']" role="button"
+    >Active Posts
+  </a>
   <a
-    class="btn btn-success my-5"
-    [routerLink]="['/post/attivi']"
-    role="button"
-    >Active Posts</a
-  >
-  <a
-    class="btn btn-success my-5 mx-2"
+    class="btn btn-danger my-5 mx-2"
     [routerLink]="['/post/inattivi']"
     role="button"
-    >Inactive Posts</a
   >
+    Inactive Posts
+  </a>
 </div>
+

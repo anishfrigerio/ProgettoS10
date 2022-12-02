@@ -1,19 +1,25 @@
-<div class="card-header">
-    {{p.id}}
-</div>
-<div
-  class="card my-4"
-  [ngClass]="{
-    'bg-warning': p.type == 'news',
-    'bg-info': p.type == 'education',
-    'bg-dark': p.type == 'politic',
-    'text-white': p.type == 'politic'
-  }"
->
-<div class="card-body">
-  <h5 class="card-title">{{p.title}}</h5>
-  <p class="card-text">{{p.body}}</p>
+<div class="container-fluid">
 
-  <ng-content></ng-content>
+    <div class="row mx-5">
+      <div class="card-header">
+        <span appHighlight> Post {{ p.id }}</span>
+      </div>
+    <div
+    class="card my-4"
+    [ngClass]="{
+      'bg-warning': p.type == 'news',
+      'bg-info': p.type == 'education',
+      'bg-dark': p.type == 'politic',
+      'text-white': p.type == 'politic'
+    }"
+    >
+    <a class="btn btn-danger my-2 w-25" (click)="eliminaPost(p.id)">Delete</a>
+    <div class="card-body">
+          <h5 class="card-title">{{ p.title | maiuscolo }}</h5>
+          <p class="card-text">{{ p.body }}</p>
 
+          <ng-content></ng-content>
+        </div>
+      </div>
+    </div>
 </div>

@@ -97,7 +97,31 @@ export class PostService {
     //   return e
     // })
   }
+  eliminaPost(id:number) {
+    return fetch("http://localhost:3000/posts/"+id, {
+      method:"DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(res=>{
+      if(res.ok){
+        //return -> then
+        return true
+      } else {
+        //throw -> catch
+        throw new Error("Attivazione fallita")
+      }
+    }).catch(err=>{
+      console.log("ERRORE", err);
+    })
 
+
+  }
+  getDetails(id:number){
+    return fetch('http://localhost:3000/posts/'+id).then((res): Promise<Post> => res.json()).then(res => {
+      return res
+    })
+  }
 
 
 

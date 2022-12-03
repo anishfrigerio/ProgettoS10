@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-import { UsersService } from '../user.service';
-import { ActivatedRoute } from '@angular/router';
+import { getUsers } from '../user.service';
+
 
 
 
@@ -11,16 +11,20 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-
-
 export class UsersComponent implements OnInit {
-user!: User[];
+  users!: User[]
+  constructor() {
 
-constructor(private userSrv: UsersService, private route: ActivatedRoute){}
+}
 
-ngOnInit(): void {
- this.user = this.userSrv.fetchData();
+
+
+  ngOnInit(): void {
+    getUsers().then(users => {
+      console.log(users)
+      this.users = users;
+      console.log(this.users);
+    })
 
   }
-
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,6 +11,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { MaiuscoloPipe } from './pipes/maiuscolo.pipe';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { UsersComponent } from './users/users.component';
     HighlightDirective,
     MaiuscoloPipe,
     PostDetailsComponent,
-    UsersComponent
+    UsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

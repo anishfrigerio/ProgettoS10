@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid d-flex">
 
     <div class="row mx-5">
       <div class="card-header">
         <span appHighlight> Post {{ p.id }}</span>
       </div>
     <div
-    class="card my-4"
+    class="card my-4 mt-0"
     [ngClass]="{
       'bg-warning': p.type == 'news',
       'bg-info': p.type == 'education',
@@ -13,7 +13,7 @@
       'text-white': p.type == 'politic'
     }"
     >
-    <a class="btn btn-danger my-2 w-25" (click)="eliminaPost(p.id)">Delete</a>
+    <a class="btn my-2 ms-0" (click)="eliminaPost(p.id)" style="width:20px;">❌</a>
     <div class="card-body">
           <h5 class="card-title">{{ p.title | maiuscolo }}</h5>
           <p class="card-text">{{ p.body }}</p>

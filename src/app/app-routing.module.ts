@@ -5,6 +5,7 @@ import { PostAttiviComponent } from './post-attivi/post-attivi.component';
 import { PostInattiviComponent } from './post-inattivi/post-inattivi.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 const routes: Route[] = [
@@ -13,24 +14,30 @@ const routes: Route[] = [
     component: HomeComponent
   },
   {
-    path: "post/attivi",
+    path: "post-attivi",
     component: PostAttiviComponent
   },
   {
-    path: "post/inattivi",
+    path: "post-inattivi",
     component: PostInattiviComponent
   },
   {
-    path: "post/attivi/:id",
+    path: "post-attivi/:id",
     component: PostDetailsComponent
   },
   {
-    path: "post/inattivi/:id",
+    path: "post-inattivi/:id",
     component: PostDetailsComponent
   },
   {
     path: "users",
-    component: UsersComponent
+    component: UsersComponent,
+    children: [
+      {
+        path: ":id",
+        component: UserDetailsComponent
+      }
+    ]
   }
 ];
 

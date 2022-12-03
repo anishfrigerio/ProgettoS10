@@ -3,7 +3,7 @@
 <div class="card" *ngFor="let postAt of posts">
       <app-post-card [p]="postAt">
         <a class="btn btn-danger mx-1" (click)="disattiva(postAt.id)">Disattiva</a>
-        <a class="btn btn-secondary mx-1" [routerLink]="['/post/inattivi',postAt.id]">Dettagli</a>
+        <a class="btn btn-secondary mx-1" [routerLink]="[postAt.id]" routerLinkActive="active">Dettagli</a>
       </app-post-card>
 </div>
 <!-- </div> -->

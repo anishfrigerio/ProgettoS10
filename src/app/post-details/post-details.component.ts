@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Post } from '../post';
 import { PostService } from '../post.service';
 import { ActivatedRoute } from '@angular/router';
@@ -22,6 +22,7 @@ export class PostDetailsComponent implements OnInit {
     })
 
   }
+
 
 
 }
